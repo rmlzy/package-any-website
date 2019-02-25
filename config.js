@@ -8,8 +8,8 @@ console.log(MenuBuilder);
 
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
-        width: 1000,
-        height: 700
+        width: 1024,
+        height: 768
     });
 
     mainWindow.setTitle('南极智云');

@@ -2,14 +2,15 @@
     "name": "package-any-website",
     "version": "1.0.0",
     "description": "使用 Electron 将任何网站为桌面端应用",
-    "main": "config.js",
+    "main": "electron.js",
     "scripts": {
         "postinstall": "electron-builder install-app-deps",
         "pack:mac": "electron-builder --mac",
         "pack:win": "electron-builder --win",
         "pack:linux": "electron-builder --linux",
         "pack:all": "electron-builder -mwl",
-        "pack": "node index.js"
+        "start": "node index.js",
+        "pack": "node pack.js"
     },
     "repository": {
         "type": "git",

@@ -21,12 +21,12 @@ prompt([
     }
 ])
     .then(({name, url, platform}) => {
-        console.log(platform);
+        const macParams = platform.includes('mac') ? '--mac' : '';
+        const linuxParams = platform.includes('windows') ? '--linux' : '';
+        const winParams = platform.includes('linux') ? '--win' : '';
+        if (platform.length === 0) {
+            shell.echo('请至少输入一个平台!');
+            shell.exit(1);
+        }
+        shell.exec(`PACK_NAME='${name}' PACK_URL='${url}' electron-builder ${macParams} ${linuxParams} ${winParams}`)
     });
-
-if (!shell.which('electron-builder')) {
-    shell.echo('Please run: sudo npm i -g electron-builder');
-    shell.exit(1);
-}
-shell.rm('-rf', 'dist');
-shell.exec(`electron-builder --config config.js --mac --win --linux`);

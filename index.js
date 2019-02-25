@@ -47,5 +47,5 @@ prompt([
 
         shell.rm('-rf', 'dist');
         // Package use electron-builder
-        shell.exec(`PACK_NAME='${name}' PACK_URL='${url}' electron-builder ${macParams} ${linuxParams} ${winParams} --config ./config/builder.json --version=false`)
+        shell.exec(`electron-builder ${macParams} ${linuxParams} ${winParams} --config ./config/builder.json --version=false`)
     });

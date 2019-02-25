@@ -1,3 +1,5 @@
+![](./doc/how-to-use.gif)
+
 使用 [Electron](https://github.com/electron/electron) 将任何网站为桌面端应用.
 
 类似于: [nativefier](https://github.com/jiahaog/nativefier)

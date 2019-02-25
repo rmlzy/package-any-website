@@ -1,5 +1,5 @@
 {
-    "productName": "Hello",
+    "productName": "Github",
     "appId": "com.example.electron-cra",
     "asar": true,
     "extends": null,

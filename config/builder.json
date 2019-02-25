@@ -1,0 +1,15 @@
+{
+    "productName": "Hello",
+    "appId": "com.example.electron-cra",
+    "asar": true,
+    "extends": null,
+    "directories": {
+        "buildResources": "dist"
+    },
+    "mac": {
+        "icon": "images/app-icon.png"
+    },
+    "win": {
+        "icon": "images/app-icon.ico"
+    }
+}

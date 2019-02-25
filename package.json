@@ -2,15 +2,10 @@
     "name": "package-any-website",
     "version": "1.0.0",
     "description": "使用 Electron 将任何网站为桌面端应用",
-    "main": "electron.js",
+    "main": "./src/electron.js",
     "scripts": {
         "postinstall": "electron-builder install-app-deps",
-        "pack:mac": "electron-builder --mac",
-        "pack:win": "electron-builder --win",
-        "pack:linux": "electron-builder --linux",
-        "pack:all": "electron-builder -mwl",
-        "start": "node index.js",
-        "pack": "node pack.js"
+        "start": "node index.js"
     },
     "repository": {
         "type": "git",
@@ -28,20 +23,8 @@
         "enquirer": "^2.3.0",
         "shelljs": "^0.8.3"
     },
-    "build": {
-        "appId": "com.example.electron-cra",
-        "productName": "南极智云",
-        "asar": true,
-        "extends": null,
-        "directories": {
-            "buildResources": "dist"
-        },
-        "mac": {
-            "icon": "images/app-icon.png"
-        },
-        "win": {
-            "icon": "images/app-icon.ico"
-        }
-    },
-    "dependencies": {}
+    "dependencies": {
+        "global": "^4.3.2",
+        "jsonfile": "^5.0.0"
+    }
 }

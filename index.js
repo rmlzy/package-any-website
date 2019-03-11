@@ -23,8 +23,8 @@ prompt([
 ])
     .then(({name, url, platform}) => {
         const macParams = platform.includes('mac') ? '--mac' : '';
-        const linuxParams = platform.includes('windows') ? '--linux' : '';
-        const winParams = platform.includes('linux') ? '--win' : '';
+        const linuxParams = platform.includes('windows') ? '--win' : '';
+        const winParams = platform.includes('linux') ? '--linux' : '';
         if (platform.length === 0) {
             shell.echo('Choose at least one platform!');
             shell.exit(1);

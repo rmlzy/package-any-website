@@ -13,8 +13,8 @@ app.on('ready', () => {
     mainWindow = new BrowserWindow({
         width: 1250,
         height: 768,
-        minHeight: 1250,
-        minWidth: 768
+        minWidth: 1250,
+        minHeight: 768
     });
 
     mainWindow.setTitle(productName);

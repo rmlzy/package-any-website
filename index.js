@@ -34,7 +34,13 @@ prompt([
             const builderConfigPath = './config/builder.json';
             const builder = jsonfile.readFileSync(builderConfigPath);
             builder.productName = name;
+            builder.appId = `com.example.${name}`;
             jsonfile.writeFileSync(builderConfigPath, builder, { spaces: 4 });
+
+            const pkgPath = './package.json';
+            const pkg = jsonfile.readFileSync(pkgPath);
+            pkg.name = name;
+            jsonfile.writeFileSync(pkgPath, pkg, { spaces: 4 });
 
             const customConfigPath = './config/customConfig.json';
             const customConfig = jsonfile.readFileSync(customConfigPath);

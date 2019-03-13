@@ -1,5 +1,5 @@
 {
-    "name": "package-any-website",
+    "name": "github",
     "version": "1.0.0",
     "description": "使用 Electron 将任何网站为桌面端应用",
     "main": "./src/electron.js",

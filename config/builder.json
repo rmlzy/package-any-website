@@ -1,6 +1,6 @@
 {
-    "productName": "南极智云",
-    "appId": "com.example.electron-cra",
+    "productName": "百度",
+    "appId": "com.example.百度",
     "asar": true,
     "extends": null,
     "directories": {

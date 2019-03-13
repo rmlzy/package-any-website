@@ -1,6 +1,7 @@
 const {prompt} = require('enquirer');
 const shell = require('shelljs');
 const jsonfile = require('jsonfile');
+const uuid = require('uuid');
 
 prompt([
     {
@@ -22,6 +23,8 @@ prompt([
     }
 ])
     .then(({name, url, platform}) => {
+        const uuid = uuid();
+
         const macParams = platform.includes('mac') ? '--mac' : '';
         const linuxParams = platform.includes('windows') ? '--win' : '';
         const winParams = platform.includes('linux') ? '--linux' : '';
@@ -34,12 +37,12 @@ prompt([
             const builderConfigPath = './config/builder.json';
             const builder = jsonfile.readFileSync(builderConfigPath);
             builder.productName = name;
-            builder.appId = `com.example.${name}`;
+            builder.appId = `com.example.${uuid}`;
             jsonfile.writeFileSync(builderConfigPath, builder, { spaces: 4 });
 
             const pkgPath = './package.json';
             const pkg = jsonfile.readFileSync(pkgPath);
-            pkg.name = name;
+            pkg.name = uuid;
             jsonfile.writeFileSync(pkgPath, pkg, { spaces: 4 });
 
             const customConfigPath = './config/customConfig.json';

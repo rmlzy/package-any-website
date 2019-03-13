@@ -1,7 +1,7 @@
 const {prompt} = require('enquirer');
 const shell = require('shelljs');
 const jsonfile = require('jsonfile');
-const uuid = require('uuid');
+const uuidv1 = require('uuid/v1');
 
 prompt([
     {
@@ -23,7 +23,7 @@ prompt([
     }
 ])
     .then(({name, url, platform}) => {
-        const uuid = uuid();
+        const uuid = uuidv1();
 
         const macParams = platform.includes('mac') ? '--mac' : '';
         const linuxParams = platform.includes('windows') ? '--win' : '';

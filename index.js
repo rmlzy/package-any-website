@@ -56,5 +56,5 @@ prompt([
 
         shell.rm('-rf', 'dist');
         // Package use electron-builder
-        shell.exec(`electron-builder ${macParams} ${linuxParams} ${winParams} --config ./config/builder.json --version=false`)
+        shell.exec(`electron-builder --ia32 ${macParams} ${linuxParams} ${winParams} --config ./config/builder.json --version=false`)
     });

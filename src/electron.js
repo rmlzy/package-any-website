@@ -21,7 +21,7 @@ app.on('ready', () => {
 
     // 无缓存加载
     mainWindow.loadURL(appUrl, {
-        "extraHeaders" : "pragma: no-cache\n"
+        "extraHeaders": "pragma: no-cache\nclientKey: a-special-key\n"
     });
 
     // 开启控制台

@@ -10,6 +10,12 @@ const { app, BrowserWindow } = electron;
 let mainWindow;
 
 app.on('ready', () => {
+    const filter = ['*'];
+    electron.session.defaultSession.webRequest.onBeforeSendHeaders(filter, (details, callback) => {
+        details.requestHeaders['Client-Key'] = 'A-Special-Key';
+        callback({ requestHeaders: details.requestHeaders });
+    });
+
     mainWindow = new BrowserWindow({
         width: 1250,
         height: 768,
@@ -21,7 +27,7 @@ app.on('ready', () => {
 
     // 无缓存加载
     mainWindow.loadURL(appUrl, {
-        "extraHeaders": "pragma: no-cache\nclientKey: a-special-key\n"
+        "extraHeaders": "pragma: no-cache\n"
     });
 
     // 开启控制台
